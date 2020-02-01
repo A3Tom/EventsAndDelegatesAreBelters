@@ -8,7 +8,7 @@ namespace Csharp_LambsDas
         {
             MathService mathService = new MathService();
 
-            mathService.MathPerformed += (sender, e) => Console.WriteLine($"Calculation Result: {e.Result}");
+            mathService.MathPerformed += (result) => Console.WriteLine($"Calculation Result: {result}");
 
             mathService.MultiplyNumbers(42.5, 23.9);
         }
