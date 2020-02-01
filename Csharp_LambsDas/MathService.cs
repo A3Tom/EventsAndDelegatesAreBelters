@@ -5,14 +5,9 @@ namespace Csharp_LambsDas
 {
     class MathService
     {
-        //public event EventHandler<MathPerformedEventArgs> MathPerformed;
+        public Action<double> MathPerformed;
 
-        public delegate void MathPerformedHandler(double result);
-        public delegate double CalculationHandler(double value1, double value2);
-
-        public event MathPerformedHandler MathPerformed;
-
-        public void CalculateNumbers(double value1, double value2, CalculationHandler calculation)
+        public void CalculateNumbers(double value1, double value2, Func<double, double, double> calculation)
         {
             Timer timer = new Timer(5000);
 
